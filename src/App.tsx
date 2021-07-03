@@ -1,13 +1,19 @@
 import "./App.css";
-import HomeContextProvider from "../src/context/Context";
 import RouterApp from "./routerApp";
+import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
 
 function App() {
+
+  const client = new ApolloClient({
+    uri: "https://rickandmortyapi.com/graphql",
+    cache: new InMemoryCache(),
+  });
+  
   return (
-    <HomeContextProvider>
+    <ApolloProvider client={client}>
       <RouterApp />
-    </HomeContextProvider>
-  )
+    </ApolloProvider>
+  );;
 }
 
 export default App;
