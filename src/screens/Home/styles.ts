@@ -11,6 +11,8 @@ export const Container = styled.div`
   align-items: center;
   color: #ddd;
   flex-direction: column;
+  height: 100vh;
+  width: 100%;
 `
 
 export const DivSearch = styled.div`
@@ -67,5 +69,17 @@ export const DivList = styled.div`
   height: 50%;
   width: 90%;
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
+  margin-top: 10px;
+`
+
+export const Error = styled.div`
+  height: 100vh;
+  width: 100%;
+  justify-content: center;
+  backdrop-filter: opacity(20%);
+  background: rgba(0, 0, 0, 0.65);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
 `

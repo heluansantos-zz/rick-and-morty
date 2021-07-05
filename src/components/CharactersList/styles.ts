@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import Modal from "react-modal";
 
 export const Card = styled.div`
   display: flex;
@@ -17,7 +18,10 @@ export const CardImg = styled.img`
   height: 169px;
   border-radius: 6px;
   filter: grayscale(100%);
-`
+  :hover {
+    filter: grayscale(0%);
+  }
+`;
 
 export const CardName = styled.span`
   font-weight: bold;
@@ -28,8 +32,8 @@ export const CardName = styled.span`
 export const CardDescription = styled.span`
   font-size: 12px;
   color: #fff;
-  margin-bottom: 30px; // Image selected off
-`
+  margin-bottom: 30px;
+`;
 
 export const CardNameDiv = styled.div`
   display: flex;
@@ -43,3 +47,40 @@ export const CardNameDiv = styled.div`
   height: 30px;
   padding: 3px;
 `
+
+export const ModalCard = styled(Modal).attrs({
+  animationType: "fade",
+  transparent: true,
+  ariaHideApp: false,
+  contentLabel: "Modal",
+  closeTimeoutMS: 0,
+  shouldCloseOnOverlayClick: true,
+  style: {
+    overlay: {
+      backgroundColor: "rgba(0, 0, 0, 0.5)",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      alignSelf: "center",
+      overflow: "hidden",
+    },
+  },
+})`
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+`;
+
+export const ButtonClose = styled.button`
+  height: 30px;
+  width: 70px;
+  background: #1b1b1b;
+  border: 2px solid #606060;
+  box-sizing: border-box;
+  border-radius: 8px;
+  margin: 5px;
+  color: #fff;
+`;
